@@ -1,0 +1,49 @@
+<!-- Extiende o hereda todo el contenido de la vista 'layouts.app', lo que significa que se usará como una plantilla base. -->
+
+<h2>Edit Course</h2>
+<!-- Título de la página que indica que estamos en la sección de edición de curso. -->
+
+<!-- Comienza el formulario para editar un curso.
+La acción del formulario apunta a la ruta 'courses.update' y pasa el ID del curso para saber cuál modificar.
+La clase añadida se utiliza para dar estilos específicos al formulario. -->
+<form action="/lesson7/courses/edit/<%=course.id%>" method="post" class="edit-course-form" >
+
+    <!-- Token CSRF para proteger contra ataques de falsificación de solicitudes entre sitios. -->
+
+    <!-- Cada uno de estos campos del formulario se prellena con la información actual del curso para edición. -->
+    <label>Title:</label>
+    <input required type="text" name="title" value="<%= course.title %>">
+
+    <label>Description:</label>
+    <textarea name="description"><%= course.description %></textarea>
+
+    <label>Language:</label>
+    <input required type="text" name="language" value="<%= course.language %>">
+
+    <label>Difficulty:</label>
+    <select name="difficulty" required>
+        <!-- Se verifica la dificultad actual del curso y se selecciona la opción correspondiente en el dropdown. -->
+        <option value="Beginner" <%= course.difficulty === 'Beginner' ? 'selected' : '' %>>Beginner</option>
+        <option value="Intermediate" <%= course.difficulty === 'Intermediate' ? 'selected' : '' %>>Intermediate</option>
+        <option value="Advanced" <%= course.difficulty === 'Advanced' ? 'selected' : '' %>>Advanced</option>
+    </select>
+
+    <label for="instructor">Instructor:</label>
+    <select name="instructor" id="instructor" class="form-control" required>
+        <option value="">Seleccione un instructor</option>
+        <% instructors.forEach(function(instructor) { %>
+            <option value="<%= instructor.name %>" <%= course.instructor === instructor.name ? 'selected' : '' %>>
+                <%= instructor.name %>
+            </option>
+        <% }) %>
+    </select>
+    <% if (errors && errors.instructor) { %>
+        <!-- Mensaje de error para el campo 'instructor' -->
+        <div class="alert alert-danger"><%= errors.instructor.msg %></div>
+    <% } %>
+
+    <!-- Botón para enviar el formulario y actualizar la información del curso en la base de datos. -->
+    <input required type="submit" value="Update Course">
+</form>
+<!-- Fin del formulario -->
+

@@ -1,0 +1,39 @@
+<h2>Students List</h2>
+<a class="btn btn-primary" href="/lesson7/students/new" style="padding: .2rem .4rem;">Add New Student</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Example student data, replace with your actual data -->
+        <%students.forEach(student=> { %>
+            <tr>
+                <td>
+                    <%=student.id%>
+                </td>
+                <td>
+                    <%=student.name%>
+                </td>
+                <td>
+                    <!-- Replace with actual logic to display student's courses -->
+                    <%if(student.dataValues.Courses.length> 0){ %>
+                        <% student.dataValues.Courses.forEach(course=> { %>
+                            <span>
+                                <%= course.title %>
+                            </span>
+                            <% }) %>
+                    <% } else { %>
+                        <span>No course enrolled</span>
+                     <% } %>
+                    
+
+                </td>
+            </tr>
+            <%})%>
+    </tbody>
+</table>

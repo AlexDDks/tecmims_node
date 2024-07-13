@@ -1,0 +1,14 @@
+
+<h2>Course Details</h2>
+<div class="course-details">
+    <img src="/lesson7/resources/assets/imgs/mainImages/logoTecmilenio.png" alt="<%= course.title %>" class="course-image">
+    <h3><%= course.title %></h3>
+    <p><strong>Description:</strong> <%= course.description %></p>
+    <p><strong>Language:</strong> <%= course.language %></p>
+    <p><strong>Difficulty:</strong> <%= course.difficulty %></p>
+    <p><strong>Instructor:</strong> <%=course.dataValues.instructor.name%></p>
+</div>
+
+<a href="/lesson7/courses" class="back-link">Back to Courses List</a>
+
+

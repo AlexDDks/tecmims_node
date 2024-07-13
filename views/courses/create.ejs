@@ -1,0 +1,60 @@
+
+<h2>Add New Course</h2>
+<!-- Título de la página que indica que estamos en la sección de agregar un nuevo curso. -->
+
+<!-- Comienza el formulario para agregar un nuevo curso.
+     La acción del formulario apunta a la ruta 'courses.store'.
+     La clase añadida se utiliza para dar estilos específicos al formulario. -->
+<form class="course-form" action="/lesson7/courses/new" method="post">
+    <input required type="hidden" name="_csrf" value="csrfToken">
+    <!-- Token CSRF para proteger contra ataques de falsificación de solicitudes entre sitios. -->
+
+    <label for="title">Title:</label>
+    <input required type="text" id="title" name="title" value="">
+    <% if (errors && errors.title) { %>
+        <!-- Mensaje de error para el campo 'title' -->
+        <div class="alert alert-danger"><%= errors.title.msg %></div>
+    <% } %>
+
+    <label for="description">Description:</label>
+    <textarea required id="description" name="description"></textarea>
+    <% if (errors && errors.description) { %>
+        <!-- Mensaje de error para el campo 'description' -->
+        <div class="alert alert-danger"><%= errors.description.msg %></div>
+    <% } %>
+
+    <label for="language">Language:</label>
+    <input required type="text" id="language" name="language" value="">
+    <% if (errors && errors.language) { %>
+        <!-- Mensaje de error para el campo 'language' -->
+        <div class="alert alert-danger"><%= errors.language.msg %></div>
+    <% } %>
+
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty" name="difficulty">
+        <option value="Beginner" >Beginner</option>
+        <option value="Intermediate" >Intermediate</option>
+        <option value="Advanced">Advanced</option>
+    </select>
+    <% if (errors && errors.difficulty) { %>
+        <!-- Mensaje de error para el campo 'difficulty' -->
+        <div class="alert alert-danger"><%= errors.difficulty.msg %></div>
+    <% } %>
+
+    <label for="instructor">Instructor:</label>
+    <select required name="instructor" id="instructor" class="form-control">
+        <option value="">Seleccione un instructor</option>
+        <% instructors.forEach(function(instructor) { %>
+            <option value="<%= instructor.name %>">
+                <%= instructor.name %>
+            </option>
+        <% }) %>
+    </select>
+    <% if (errors && errors.instructor) { %>
+        <!-- Mensaje de error para el campo 'instructor' -->
+        <div class="alert alert-danger"><%= errors.instructor.msg %></div>
+    <% } %>
+
+    <!-- Botón para enviar el formulario y agregar el nuevo curso en la base de datos. -->
+    <input required type="submit" value="Add Course">
+</form>

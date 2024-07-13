@@ -1,0 +1,79 @@
+/* Estilos específicos para el formulario de cursos */
+
+.course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.course-form label,
+.course-form input,
+.course-form textarea,
+.course-form select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    /* Añadido para mejorar la visibilidad del foco en los elementos del formulario */
+    outline: none;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+#description{
+    width: 100%;
+}
+.course-form input[type="submit"] {
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+    border-radius: 0.25rem; /* Consistencia en el diseño de los botones */
+}
+
+.course-form input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos para los mensajes de error */
+.alert {
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    text-align: left;
+}
+
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+/* Estilos para la entrada del formulario con errores de validación */
+.is-invalid {
+    border-color: #e3342f;
+    /* Añade un poco de padding para que el texto no toque los bordes */
+    padding-right: calc(0.5rem - 1px);
+    padding-left: calc(0.5rem - 1px);
+    /* Añade un 'shake' ligero cuando hay errores para llamar la atención del usuario */
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Keyframes para la animación 'shake' */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}

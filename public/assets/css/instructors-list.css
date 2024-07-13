@@ -1,0 +1,170 @@
+/* Contenedor Principal */
+.instructors-list-container {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Título */
+.instructors-list-container h2 {
+    margin-bottom: 1.5rem;
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Botón Principal */
+.instructors-list-container .btn-primary {
+    background-color: #1a73e8;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.instructors-list-container .btn-primary:hover,
+.instructors-list-container .btn-primary:focus {
+    background-color: #165ab6;
+}
+
+/* Tabla */
+.instructors-list-container .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.instructors-list-container .table th,
+.instructors-list-container .table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.instructors-list-container .table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.instructors-list-container .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botones de Acción */
+.instructors-list-container .btn-info,
+.instructors-list-container .btn-danger {
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.instructors-list-container .btn-info {
+    background-color: #17a2b8;
+}
+
+.instructors-list-container .btn-info:hover,
+.instructors-list-container .btn-info:focus {
+    background-color: #138496;
+}
+
+.instructors-list-container .btn-danger {
+    background-color: #dc3545;
+}
+
+.instructors-list-container .btn-danger:hover,
+.instructors-list-container .btn-danger:focus {
+    background-color: #c82333;
+}
+
+/* Imagen del Instructor */
+.instructors-list-container .instructor-image {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Button Styles */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c82333;
+}
+

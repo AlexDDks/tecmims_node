@@ -1,0 +1,35 @@
+<div class="instructors-list-container">
+    <h2>Instructors List</h2>
+
+    <a class="btn btn-primary" href="/lesson7/instructors/new">Add New Instructor</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% instructors.forEach(function(instructor) { %>
+                <tr>
+                    <td><%= instructor.id %></td>
+                    <td><%= instructor.name %></td>
+                    <td>
+                        <a href="instructors/<%= instructor.id %>/courses" class="btn btn-info">View Courses</a>
+                        <button class="btn btn-danger" onclick="confirmDelete('<%= instructor.id %>','/lesson7/instructors/delete/')">Delete</button>
+                    </td>
+                    <td>
+                        <% if (instructor.image_path) { %>
+                            <img class="instructor-image" src="<%= instructor.image_path %>" alt="Instructor Image">
+                        <% } %>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <%- include("../partials/modaldelete")%>

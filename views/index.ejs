@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses App</title>
+    <%for (style of styles ){%>
+        <link rel="stylesheet" href="<%=style%>">
+    <%}%>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="divLogo">
+                <img src="/lesson7/resources/assets/imgs/mainImages/image.png" alt="" class="logoTecmilenio">
+            </div>
+            <a href="/lesson7/courses" class="navbar-brand">Home</a>
+            <nav>
+                <ul class="navbar-nav">
+                    <li><a href="/lesson7/courses">Courses</a></li>
+                    <li><a href="/lesson7/instructors">Instructors</a></li>
+                    <li><a href="/lesson7/students">Students</a></li>
+                    <li><a href="/lesson7/instructors/new">Add Instructor</a></li>
+                    <li><a href="/lesson7/students/new">Add Student</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <%- include(content) %>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Courses App. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<h2>Courses List</h2>
+<a class="add-course-button btn btn-primary" href="/lesson7/courses/new">Add New Course</a>
+<a class="view-instructors-button btn btn-secondary" href="/lesson7/instructors">View All Instructors</a>
+<a class="add-instructor-button btn btn-primary" href="/lesson7/instructors/new">Add New Instructor</a>
+<a class="view-students-button btn btn-secondary" href="/lesson7/students">View All Students</a>
+
+<table class="courses-table table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Language</th>
+            <th>Difficulty</th>
+            <th>Instructor</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Example course data, replace with your actual data -->
+        <%courses.forEach(course=> {%>
+            <tr>
+                <td class="tdBold"><%=course.title%></td>
+                <td><%=course.description%></td>
+                <td><%=course.language%></td>
+                <td><%=course.difficulty%></td>
+                <td>
+                    <!-- Replace with actual logic to display instructor -->
+                    <a href="/lesson7/instructors/<%=course.dataValues.instructor.id%>/courses"><%=course.dataValues.instructor.name%></a>
+                </td>
+                <td class="actions-cell">
+                    <a class="view-course-button btn btn-info" href="/lesson7/courses/details/<%=course.dataValues.id%>">View</a>
+                    <a class="edit-link btn btn-warning" href="courses/edit/<%=course.id%>">Edit</a>
+                    <button class="delete-button btn btn-danger" onclick="confirmDelete('<%=course.id%>','/lesson7/courses/delete/')">Delete</button>
+                </td>
+            </tr>
+            <%})%>
+    </tbody>
+</table>
+
+<%- include("../partials/modaldelete")%>

@@ -1,0 +1,200 @@
+/* Estilos globales para la lista de cursos */
+.add-course-button,
+.view-instructors-button,
+.add-instructor-button,
+.view-students-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.add-course-button:hover,
+.view-instructors-button:hover,
+.add-instructor-button:hover,
+.view-students-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la tabla de cursos */
+.courses-table {
+    width: 95%;
+    max-width: 95vw; /* Ajusta la tabla para que ocupe casi todo el viewport */
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.courses-table th,
+.courses-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.courses-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Estilos para alternar el color de fondo de las filas de la tabla */
+.courses-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.courses-table tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+/* Estilos para las imágenes de los cursos */
+.course-image {
+    width: auto;
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/* Estilos para las celdas de acciones */
+.actions-cell {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Estilos para los botones de acción de la tabla */
+.view-course-button,
+.edit-link,
+.delete-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.view-course-button {
+    background-color: #17a2b8;
+}
+
+.edit-link {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+/* Mejora la visibilidad del botón al pasar el mouse */
+.view-course-button:hover {
+    background-color: #138496;
+}
+
+.edit-link:hover {
+    background-color: #e0a800;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos adicionales para el contenido dentro del modal */
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    text-align: right;
+}
+
+/* Button Styles */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c82333;
+}

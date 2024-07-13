@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Add New Instructor</h2>
+    <form action="/lesson7/instructors" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf" value="csrfToken "><!-- CSRF Token for form submission security -->
+        
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image of the Professor:</label>
+            <input accept="image/*" required type="file" id="image" name="image">
+           <!-- validacion -->
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Instructor</button>
+    </form>
+</div>
+

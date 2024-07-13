@@ -1,0 +1,22 @@
+<h2>Courses by <%= instructor.name %></h2>
+<img src="<%=instructor.image_path%>" alt="" class="profile-instructor">
+<% if (error) { %>
+    <div class="alert alert-danger">
+        <%= error %>
+    </div>
+<% } %>
+<div class="courses-list">
+    <% if (courses.length > 0) { %>
+        <% courses.forEach((course)=>{ %>
+            <div class="course-details">
+                <h3><%= course.title %></h3>
+                <p><strong>Description:</strong> <%= course.description %></p>
+                <p><strong>Language:</strong> <%= course.language %></p>
+                <p><strong>Difficulty:</strong> <%= course.difficulty %></p>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>No courses available for this instructor.</p>
+    <% } %>
+</div>
+<a href="/lesson7/courses" class="back-link">Back to Courses List</a>
