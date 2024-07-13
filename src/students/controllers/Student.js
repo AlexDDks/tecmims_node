@@ -46,19 +46,45 @@ class StudentController {
     }
     static async create(req, res) {
         try {
-            let { name, course_id} = req.body;
-            course_id = parseInt(course_id)
-            const newStudent = await Student.create({ name});
-            const student_id = newStudent.dataValues.id
-            await CourseStudent.create({ course_id, student_id })
+            let { name, course_id } = req.body;
+            console.log('Received course_id:', course_id);
+            console.log('Request body:', req.body);
+
+            // Asegúrate de que course_id es un array
+            if (!Array.isArray(course_id)) {
+                course_id = [course_id];
+            }
+
+            // Convertir cada course_id a entero y verificar que no sea NaN
+            course_id = course_id.map(id => {
+                const parsedId = parseInt(id, 10);
+                if (!isNaN(parsedId)) {
+                    return parsedId;
+                } else {
+                    console.error(`Invalid course_id: ${id}`);
+                    return null;
+                }
+            }).filter(id => id !== null); // Filtra los IDs no válidos
+
+            console.log('Parsed course_id array:', course_id);
+
+            // Crea el nuevo estudiante
+            const newStudent = await Student.create({ name });
+            const student_id = newStudent.dataValues.id;
+            console.log(`Created student_id: ${student_id}`);
+
+            // Inserta cada curso seleccionado en la tabla CourseStudent
+            for (let courseId of course_id) {
+                console.log(`Inserting course_id: ${courseId} with student_id: ${student_id}`);
+                await CourseStudent.create({ course_id: courseId, student_id });
+            }
+
             res.redirect("/lesson7/students");
         } catch (error) {
             console.error(error);
             res.redirect("/lesson7/students");
-
         }
     }
 }
-
 
 module.exports = StudentController;

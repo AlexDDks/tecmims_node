@@ -13,6 +13,11 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use("/lesson7/resources", express.static(join(__dirname,"./public")));
 app.set("view engine", "ejs");
 

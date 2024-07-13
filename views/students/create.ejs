@@ -12,12 +12,37 @@
         <div class="form-group">
             <label for="courseId">Course:</label>
             <select required class="form-control" id="course_id" name="course_id" multiple>
-                <%courses.forEach(course=>{%>
-                    <option value="<%=course.id%>"><%=course.title %></option>
-                <%})%>
+                <% courses.forEach(course => { %>
+                    <option value="<%= course.id %>"><%= course.title %></option>
+                <% }) %>
             </select>
         </div>
+        
 
         <button type="submit" class="btn btn-primary">Add Student</button>
     </form>
 </div>
+
+<style>
+    select{
+        font-size: 16px !important;
+    }
+    .btn-primary{
+        margin: auto;
+        padding: 10px !important;
+        border-radius: 5px !important;
+        color: white !important;
+        background-color:#18c575 !important;
+        padding: 15px !important;
+        margin: auto !important;
+        width: 200px !important;
+        margin: auto !important;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .btn-primary:hover{
+        text-decoration: underline !important;
+        background-color:#117546 !important;
+    }
+</style>

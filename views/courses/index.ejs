@@ -1,8 +1,5 @@
 <h2>Courses List</h2>
 <a class="add-course-button btn btn-primary" href="/lesson7/courses/new">Add New Course</a>
-<a class="view-instructors-button btn btn-secondary" href="/lesson7/instructors">View All Instructors</a>
-<a class="add-instructor-button btn btn-primary" href="/lesson7/instructors/new">Add New Instructor</a>
-<a class="view-students-button btn btn-secondary" href="/lesson7/students">View All Students</a>
 
 <table class="courses-table table">
     <thead>
@@ -25,7 +22,7 @@
                 <td><%=course.difficulty%></td>
                 <td>
                     <!-- Replace with actual logic to display instructor -->
-                    <a href="/lesson7/instructors/<%=course.dataValues.instructor.id%>/courses"><%=course.dataValues.instructor.name%></a>
+                    <a href="/lesson7/instructors/<%=course.dataValues.instructor.id%>/courses" class="aProfessor"><%=course.dataValues.instructor.name%></a>
                 </td>
                 <td class="actions-cell">
                     <a class="view-course-button btn btn-info" href="/lesson7/courses/details/<%=course.dataValues.id%>">View</a>
@@ -36,5 +33,29 @@
             <%})%>
     </tbody>
 </table>
+
+<style>
+   
+    a{
+        color: rgb(255, 255, 255) !important;
+    }
+    header a, .aProfessor{
+        color:#0d6efd !important;
+    }
+    button.btn-danger{
+        font-size: 15px !important;
+    }
+    button.btn-danger:hover{
+        text-decoration: underline !important;
+    }
+    a.btn-primary:hover{
+            text-decoration: underline !important;
+            background-color:#117546 !important;
+
+        }
+        a.btn-primary{
+        background-color:#18c575 !important;
+    }
+</style>
 
 <%- include("../partials/modaldelete")%>

@@ -1,5 +1,8 @@
 <h2>Courses by <%= instructor.name %></h2>
+<div class="divImg">
 <img src="<%=instructor.image_path%>" alt="" class="profile-instructor">
+</div>
+
 <% if (error) { %>
     <div class="alert alert-danger">
         <%= error %>
@@ -20,3 +23,12 @@
     <% } %>
 </div>
 <a href="/lesson7/courses" class="back-link">Back to Courses List</a>
+
+<style>
+    .divImg{
+        width: 200px !important;
+    }
+    .divImg img{
+        width:100% !important;
+    }
+</style>
